@@ -1,0 +1,142 @@
+
+.container {
+    width: 100%;
+    height: 100vh;
+  }
+  .nextline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+.bgimage {
+    background-image: url('../public/bgimage.jpg');
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.heading {
+    margin: 0; 
+    color: #000000;
+    text-align: center;
+  }
+.container1{
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    height: auto;
+   
+}
+.center{
+    padding-top: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textcenter{
+    justify-content: center;
+    text-align: center; 
+    font-family: 'Cinzel', serif;
+}
+.group {
+    position: relative;
+   }
+   
+   .hcentre{
+    display: flex;
+    justify-content: center;
+  }
+  .input {
+    max-width: 190px;
+    height: 44px;
+    background-color: #dadada0a;
+    border-radius: .5rem;
+    padding: 0 1rem;
+    border: 2px solid transparent;
+    font-size: 1rem;
+    transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .label {
+    display: block;
+    margin-bottom: .3rem;
+    font-size: .9rem;
+    font-weight: bold;
+    color: #000000cf;
+    transition: color .3s cubic-bezier(.25,.01,.25,1) 0s;
+  }
+  
+  .input:hover, .input:focus, .inputgroup:hover .inputgroup {
+    outline: none;
+    border-color: #05060f;
+  }
+  .button {
+    text-decoration: none;
+    position: relative;
+    border: none;
+    font-size: 20px;
+    font-family: inherit;
+    color: #fff;
+    width: 9em;
+    height: 2em;
+    line-height: 2em;
+    text-align: center;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 300%;
+    border-radius: 30px;
+    z-index: 1;
+  }
+  
+  .button:hover {
+    animation: ani 8s linear infinite;
+    border: none;
+    cursor:pointer;
+    
+  }
+  
+  
+  
+  
+  .button:before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+    background-size: 400%;
+    border-radius: 35px;
+    transition: 1s;
+  }
+  
+  .button:hover::before {
+    filter: blur(5px);
+  }
+  
+  .button:active {
+    background: linear-gradient(32deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);
+  }
+  .link{
+    color: rgba(146, 52, 234, 0.728);
+    
+  }
+  .link:hover {
+    cursor:pointer;
+   }
+   .loginpic:hover{
+    cursor:pointer;
+   }
+   .nonedis{
+    display: none;
+   }
+  .redinput{
+    font-size: 0.8rem;
+    border: none;
+    justify-content: center;
+    border-top: #05060f 1px solid;
+    text-align: center;
+    color: red;
+  }
