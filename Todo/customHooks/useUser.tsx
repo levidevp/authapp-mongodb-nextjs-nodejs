@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react"
 import axios from "axios";
 
@@ -14,25 +13,31 @@ const useUser = () => {
      onSubmitHandler()
     },);
 
-    const onSubmitHandler = async () => { 
-            try {
-                const tokenid = await localStorage.getItem("token")
-            await axios.post("http://localhost:8000/auth/authorization", { tokenid }).then((response) => {
-                          console.log("status",response.data.status);
-                          if (response.data.status == "success") {
-                            setemail(response.data.user.email)
-                            setfirstname(response.data.user.firstname)
-                            setlastname(response.data.user.lastname)
-                          } else {
-                            setbackerror(response.data.message)
-                          }
-                          });        
-            } catch (e) {
-                console.log("------------------------------------");
-                console.log(e);
-                console.log("------------------------------------");
-            }
+    const onSubmitHandler = async () => {
+        try {
+          const tokenid = await localStorage.getItem("token");
+          const headers = {
+            Authorization: `Bearer ${tokenid}`,
+          };
+      
+          await axios
+            .post("http://localhost:8000/auth/User", {}, { headers })
+            .then((response) => {
+              if (response.data.status === "success") {
+                setemail(response.data.user.email);
+                setfirstname(response.data.user.firstname);
+                setlastname(response.data.user.lastname);
+              } else {
+                setbackerror(response.data.message);
+              }
+            });
+        } catch (e) {
+          console.log("------------------------------------");
+          console.log(e);
+          console.log("------------------------------------");
         }
+      };
+      ;
     
 
 

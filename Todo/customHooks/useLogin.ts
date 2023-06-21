@@ -19,9 +19,7 @@ const useLogin = () => {
         } else {
           try {
             await axios.post("http://localhost:8000/auth/login", {email,password }).then((response) => {
-                          console.log("status",response.data.status);
                           if (response.data.status == "success") {
-                            console.log("token",response.data.token);
                             localStorage.setItem("token",response.data.token)
                             router.push('/user')
                           } else if(response.data.status == "Failed") {
@@ -41,6 +39,9 @@ const useLogin = () => {
     const signpage = async () => {
         router.push('/Signup')
     }
+    const Forgotpage = async () => {
+      router.push('/Forgotpassword')
+  }
 
 
     return  {
@@ -51,7 +52,8 @@ const useLogin = () => {
         email,
         password,
         error, 
-        loginError
+        loginError,
+        Forgotpage
     }              
                                        
 }

@@ -11,7 +11,7 @@ const Login = () => {
         email,
         password,
         error,
-
+        Forgotpage,
         loginError
     } = useLogin()
     return (
@@ -53,7 +53,12 @@ const Login = () => {
                                         placeholder="Enter your Password"
                                         value={password}
                                         onChange={(e) => setpassword(e.target.value)} />
-                                    {!password && <p className={styles.redinput}>{error}</p>}
+                                    {!password && <p className={styles.redinput}>{error}</p> }
+                                    <span >
+                                
+                                <span className={styles.link2} onClick={Forgotpage}><b>Forgot password</b></span>
+                            </span> 
+                                    
                                 </div>
                             </div>
                             <br />

@@ -21,6 +21,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  Verify: {
+    type: Boolean,
+    default: false,
+  },
 });
 const Usercollection = mongoose.model('User', userSchema);
 module.exports = Usercollection

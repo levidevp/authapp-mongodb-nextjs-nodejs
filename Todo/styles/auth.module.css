@@ -140,3 +140,13 @@
     text-align: center;
     color: red;
   }
+  .link2{
+    color: rgba(138, 184, 240, 0.728);
+    justify-content: end;
+    font-size: small;
+  }
+  .link2:hover {
+    cursor:pointer;
+    color: rgba(6, 102, 219, 0.728);
+
+   }

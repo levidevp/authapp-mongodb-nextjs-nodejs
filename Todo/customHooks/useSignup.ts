@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import axios from "axios";
 
 const useSignup = () => {
@@ -13,21 +13,16 @@ const useSignup = () => {
     const [error, seterror] = useState("")
     const [backerror,setbackerror] = useState("")
 
-    useEffect(() => {   
-         
-    },);
-
     const onSubmitHandler = async () => {
         if (!firstname || !email || !password ) {
             seterror("please fill the field properly")
         } else {
             try {
             await axios.post("http://localhost:8000/auth/Signup", { firstname,lastname,email,password }).then((response) => {
-                          console.log("hello",response.data.status);
                           if (response.data.status == "success") {
                             localStorage.setItem("token",response.data.token)
-                            router.push('/user')
-
+                            localStorage.setItem("HashDigits",response.data.HashDigits)
+                            router.push('/verify')
                           } else {
                             setbackerror(response.data.message)
                           }

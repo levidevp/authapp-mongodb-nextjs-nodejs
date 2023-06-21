@@ -5,9 +5,6 @@ const user = () => {
 
     const {
         onSubmitHandler,      
-        setemail,    
-        setfirstname,
-        setlastname,
         lastname,
         email,
         firstname,

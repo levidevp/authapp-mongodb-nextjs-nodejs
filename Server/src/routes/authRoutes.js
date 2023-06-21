@@ -1,14 +1,29 @@
 const express = require("express")
 const routes = express.Router()
-const {login,logout,Signup,authorization} = require("../controller/authController")
+const {
+    login,
+    Signup,
+    resetlink,
+    changepassword,
+    User,
+} = require("../controller/authController.js")
+const {
+    Verify, authorization,
+} = require("../middleware/verifymiddleware.js")
+
 
 
 // public routes
 routes.post('/Signup', Signup)
-routes.post('/login',login)
-routes.delete('/logout', logout)
-routes.post('/authorization', authorization)
-// pirvate routes
+routes.post('/login', login)
+routes.post('/Verify', Verify)
+routes.post('/resetlink', resetlink)
+routes.post('/changepassword', changepassword)
 
+// middleware to protect private routes
+routes.post('/User', authorization)
+
+// pirvate routes
+routes.post('/User', User)
 
 module.exports = routes
